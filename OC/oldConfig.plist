@@ -651,7 +651,7 @@
                 <key>CustomPciSerialDevice</key>
                 <false/>
                 <key>CustomSMBIOSGuid</key>
-                <false/>
+                <true/>
                 <key>DisableIoMapper</key>
                 <false/>
                 <key>DisableIoMapperMapping</key>
@@ -843,8 +843,6 @@
                     <data>Rg==</data>
                     <key>boot-args</key>
                     <string></string>
-                    <key>csr-active-config</key>
-                    <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
                     <string>zh-Hans:0</string>
                     <key>run-efi-updater</key>
@@ -861,7 +859,6 @@
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <array>
                     <string>boot-args</string>
-                    <string>csr-active-config</string>
                 </array>
             </dict>
             <key>LegacyOverwrite</key>
@@ -907,7 +904,7 @@
             <key>UpdateSMBIOS</key>
             <true/>
             <key>UpdateSMBIOSMode</key>
-            <string>Create</string>
+            <string>Custom</string>
             <key>UseRawUuidEncoding</key>
             <false/>
         </dict>
@@ -1036,7 +1033,7 @@
                 </dict>
                 <dict>
                     <key>Arguments</key>
-                    <string></string>
+                    <string>csr-active-config 0xA7F</string>
                     <key>Comment</key>
                     <string></string>
                     <key>Enabled</key>

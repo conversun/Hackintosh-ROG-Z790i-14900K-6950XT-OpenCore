@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>21H1123</string>
+	<string>23G93</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>NootRX</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ChefKissInc.NootRX</string>
+	<string>org.ChefKiss.NootRX</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -29,19 +29,19 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>13F100</string>
+	<string></string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>12.3</string>
+	<string>13.3</string>
 	<key>DTSDKBuild</key>
-	<string>21E226</string>
+	<string>22E245</string>
 	<key>DTSDKName</key>
-	<string>macosx12.3</string>
+	<string>macosx13.3</string>
 	<key>DTXcode</key>
-	<string>1341</string>
+	<string>1431</string>
 	<key>DTXcodeBuild</key>
-	<string>13F100</string>
+	<string>14E300c</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>AMDGPUWrangler</key>
@@ -63,87 +63,6 @@
 		</dict>
 		<key>AMDRadeonControllerNavi21</key>
 		<dict>
-			<key>ATY,Belknap</key>
-			<dict>
-				<key>aty_config</key>
-				<dict>
-					<key>CFG_NO_PP</key>
-					<false/>
-					<key>CFG_PTPL2_CNT</key>
-					<integer>16</integer>
-					<key>CFG_PTPL2_MAX</key>
-					<integer>300</integer>
-					<key>CFG_PTPL2_MIN</key>
-					<integer>120</integer>
-				</dict>
-				<key>aty_properties</key>
-				<dict>
-					<key>DalEarlyTps1Pattern</key>
-					<integer>1</integer>
-					<key>PP_DiDtSQStallPatternOverride</key>
-					<integer>16383</integer>
-					<key>PP_DisableDIDT</key>
-					<integer>0</integer>
-					<key>PP_GfxOffControl</key>
-					<integer>1</integer>
-					<key>PP_PhmUseDummyBackEnd</key>
-					<integer>0</integer>
-					<key>PP_Run_DcBTC</key>
-					<integer>0</integer>
-					<key>PP_WorkLoadPolicyMask</key>
-					<integer>16</integer>
-					<key>SMU_DisallowedFeatures</key>
-					<integer>224014029030020</integer>
-				</dict>
-			</dict>
-			<key>ATY,Carswell</key>
-			<dict>
-				<key>aty_config</key>
-				<dict>
-					<key>CFG_NO_PP</key>
-					<false/>
-					<key>CFG_PTPL2_CNT</key>
-					<integer>16</integer>
-					<key>CFG_PTPL2_MAX</key>
-					<integer>200</integer>
-					<key>CFG_PTPL2_MIN</key>
-					<integer>80</integer>
-					<key>PM_PWR_GEMINI_BGT</key>
-					<integer>400</integer>
-				</dict>
-				<key>aty_properties</key>
-				<dict>
-					<key>DalEarlyTps1Pattern</key>
-					<integer>1</integer>
-					<key>PP_DiDtSQStallPatternOverride</key>
-					<integer>16383</integer>
-					<key>PP_DisableDIDT</key>
-					<integer>0</integer>
-					<key>PP_GfxOffControl</key>
-					<integer>1</integer>
-					<key>PP_PhmUseDummyBackEnd</key>
-					<integer>0</integer>
-					<key>PP_WorkLoadPolicyMask</key>
-					<integer>16</integer>
-					<key>SMU_DisallowedFeatures</key>
-					<integer>505489005740676</integer>
-				</dict>
-			</dict>
-			<key>ATY,Deepbay</key>
-			<dict>
-				<key>aty_config</key>
-				<dict>
-					<key>CFG_NO_HDCP</key>
-					<true/>
-				</dict>
-				<key>aty_properties</key>
-				<dict>
-					<key>PP_GfxOffControl</key>
-					<integer>1</integer>
-					<key>PP_PhmUseDummyBackEnd</key>
-					<integer>0</integer>
-				</dict>
-			</dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.kext.AMDRadeonX6000Framebuffer</string>
 			<key>IOClass</key>
@@ -203,55 +122,13 @@
 				<key>PP_ToolsLogSpaceSize</key>
 				<integer>524288</integer>
 				<key>PP_WorkLoadPolicyMask</key>
-				<integer>16</integer>
+				<integer>0</integer>
 				<key>SMU_DisallowedFeatures</key>
 				<integer>4</integer>
 			</dict>
 		</dict>
 		<key>AMDRadeonControllerNavi23</key>
 		<dict>
-			<key>ATY,Henbury</key>
-			<dict>
-				<key>aty_config</key>
-				<dict>
-					<key>CFG_NO_PP</key>
-					<false/>
-					<key>CFG_PTPL2_CNT</key>
-					<integer>16</integer>
-					<key>CFG_PTPL2_MAX</key>
-					<integer>130</integer>
-					<key>CFG_PTPL2_MIN</key>
-					<integer>52</integer>
-				</dict>
-				<key>aty_properties</key>
-				<dict>
-					<key>DalEarlyTps1Pattern</key>
-					<integer>1</integer>
-					<key>DalForceMinDpmLevel</key>
-					<integer>3</integer>
-					<key>PP_DiDtSQStallPatternOverride</key>
-					<integer>16383</integer>
-					<key>PP_DisableDIDT</key>
-					<integer>0</integer>
-					<key>PP_GfxOffControl</key>
-					<integer>1</integer>
-					<key>PP_PhmUseDummyBackEnd</key>
-					<integer>0</integer>
-					<key>PP_WorkLoadPolicyMask</key>
-					<integer>16</integer>
-					<key>SMU_ActivityMonitorTable</key>
-					<data>
-					AAEABAEF6AMAAAoAAAAAAAAAAADAbDwAAAAA
-					AAAAAAAAAAABAQUAAAAAAAAAAAAAAAAAACAS
-					CgA45v//OOb//wAAAAQDBVIDAAAKAAAAAAAA
-					AAAAEAkFAAAAAAAAAAAA0AEBAACWPAAAAAAA
-					AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-					AA==
-					</data>
-					<key>SMU_DisallowedFeatures</key>
-					<integer>1628090377699844</integer>
-				</dict>
-			</dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.kext.AMDRadeonX6000Framebuffer</string>
 			<key>IOClass</key>
@@ -313,15 +190,15 @@
 				<key>PP_ToolsLogSpaceSize</key>
 				<integer>524288</integer>
 				<key>PP_WorkLoadPolicyMask</key>
-				<integer>16</integer>
+				<integer>0</integer>
 				<key>SMU_DisallowedFeatures</key>
 				<integer>4</integer>
 			</dict>
 		</dict>
-		<key>com.ChefKiss.NootRX</key>
+		<key>org.ChefKiss.NootRX</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
-			<string>com.ChefKissInc.NootRX</string>
+			<string>org.ChefKiss.NootRX</string>
 			<key>IOClass</key>
 			<string>NootRX</string>
 			<key>IOMatchCategory</key>
@@ -335,7 +212,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>11.0</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2023-2024 ChefKiss Inc. Licensed under the Thou Shalt Not Profit License version 1.5. See https://github.com/ChefKissInc/NootedRed/LICENSE for details.</string>
+	<string>Copyright © 2023-2024 ChefKiss. Licensed under the Thou Shalt Not Profit License version 1.5. See https://github.com/ChefKissInc/NootRX/LICENSE for details.</string>
 	<key>OSBundleCompatibleVersion</key>
 	<string>1.0</string>
 	<key>OSBundleLibraries</key>
