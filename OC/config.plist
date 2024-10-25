@@ -70,7 +70,7 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
-                    <string>SSDT-6950XT-73A5-GPU-SPOOF.aml</string>
+                    <string>SSDT-RX6950XT.aml</string>
                 </dict>
             </array>
             <key>Delete</key>
@@ -814,7 +814,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>agdpmod=pikera -ctrsmt gfxrst=1</string>
+                    <string>agdpmod=pikera -ctrsmt</string>
                     <key>prev-lang:kbd</key>
                     <string>zh-Hans:0</string>
                     <key>run-efi-updater</key>
