@@ -76,17 +76,9 @@
                     <key>Comment</key>
                     <string></string>
                     <key>Enabled</key>
-                    <false/>
-                    <key>Path</key>
-                    <string>SSDT-BLOCK-NVME.aml</string>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string></string>
-                    <key>Enabled</key>
                     <true/>
                     <key>Path</key>
-                    <string>disable.aml</string>
+                    <string>SSDT-BLOCK-NVME.aml</string>
                 </dict>
             </array>
             <key>Delete</key>
@@ -718,11 +710,11 @@
                 <key>PollAppleHotKeys</key>
                 <true/>
                 <key>ShowPicker</key>
-                <false/>
+                <true/>
                 <key>TakeoffDelay</key>
                 <integer>0</integer>
                 <key>Timeout</key>
-                <integer>5</integer>
+                <integer>1</integer>
             </dict>
             <key>Debug</key>
             <dict>
