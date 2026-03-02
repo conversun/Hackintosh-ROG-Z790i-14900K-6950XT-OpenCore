@@ -1,6 +1,6 @@
 # Hackintosh EFI — ROG STRIX Z790-I + i9-14900K + RX 6950 XT
 
-OpenCore 1.0.6 EFI for macOS Sequoia on ASUS ROG STRIX Z790-I GAMING WIFI.
+OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIFI.
 
 ## Hardware
 
@@ -13,7 +13,7 @@ OpenCore 1.0.6 EFI for macOS Sequoia on ASUS ROG STRIX Z790-I GAMING WIFI.
 
 ## What Works
 
-- macOS Sequoia boot and daily use
+- macOS Sequoia (15.x) and Tahoe (26.x)
 - GPU acceleration (NootRX)
 - USB mapping (USBToolBox + UTBMap)
 - CPU power management (CPUFriend + CpuTopologyRebuild for P/E-cores)
