@@ -1,0 +1,7 @@
+APPLE
+/**/*.DS_Store
+/**/._*
+Microsoft
+/OC/Tools
+.sisyphus
+OC/oldConfig.plist
