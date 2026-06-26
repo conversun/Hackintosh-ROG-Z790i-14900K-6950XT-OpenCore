@@ -27,7 +27,7 @@ OC/
 |------|----------|-------|
 | Change boot behavior | `config.plist` → Misc/Boot | Picker timeout, show/hide, hotkeys |
 | Fix sleep/wake | `config.plist` → ACPI/Patch + `ACPI/SSDT-GPRW.aml` | GPRW→XPRW rename fixes instant wake |
-| GPU issues | `config.plist` → Kernel/Add (NootRX) + `ACPI/SSDT-RX6950XT.aml` | NootRX handles Navi 21 patching (replaced WhateverGreen) |
+| GPU issues | `config.plist` → Kernel/Add (WhateverGreen) + `ACPI/SSDT-RX6950XT.aml` | WhateverGreen 1.7.1 (dev) handles Navi 21 patching; **requires `agdpmod=pikera`** to prevent black screen at boot completion |
 | USB mapping | `Kexts/UTBMap.kext/Contents/Info.plist` | Has variants: 0Info.plist, 1Info.plist, allInfo.plist for different port configs |
 | CPU power mgmt | `Kexts/CPUFriendDataProvider.kext` + `ACPI/SSDT-PLUG-ALT.aml` | CpuTopologyRebuild also active |
 | NVMe blocking | `ACPI/SSDT-BLOCK-NVME.aml` | Blocks specific NVMe from native Apple driver |
@@ -55,16 +55,16 @@ OC/
 
 | Kext | Version | Role |
 |------|---------|------|
-| Lilu | 1.7.2 | Patching framework — **dependency for NootRX, VirtualSMC, RestrictEvents** |
+| Lilu | 1.7.2 | Patching framework — **dependency for WhateverGreen, VirtualSMC, RestrictEvents** |
 | VirtualSMC | 1.3.8 | SMC emulation (core) |
-| NootRX | 1.0.0 | AMD Navi GPU driver (RX 6950 XT) — replaced WhateverGreen |
+| WhateverGreen | 1.7.1 (dev) | AMD Navi GPU driver (RX 6950 XT) — requires `agdpmod=pikera` boot-arg |
 | SMCProcessor | 1.3.8 | CPU sensor data (optional, monitoring only) |
 | SMCSuperIO | 1.3.8 | Fan/voltage sensor data (optional, monitoring only) |
 | CPUFriend | 1.3.1 | CPU frequency/power management |
 | CPUFriendDataProvider | 1.0.0 | CPU power data (machine-specific) |
 | CpuTopologyRebuild | 2.0.2 | Fix CPU topology for P/E-core CPUs — **critical for 14th Gen** |
 | NVMeFix | 1.1.4 | NVMe power management fix (optional, improves sleep) |
-| RestrictEvents | 1.1.7 | Block unwanted system events/notifications + `revpatch=sbvmm` |
+| RestrictEvents | 1.1.7 | Block unwanted system events/notifications |
 | USBToolBox | 1.2.0 | USB port mapping framework |
 | UTBMap | 1.1 | USB port map data (machine-specific) |
 
@@ -72,8 +72,7 @@ OC/
 
 | Kext | Version | Why disabled |
 |------|---------|-------------|
-| WhateverGreen | 1.7.1 | Replaced by NootRX for Navi 21 GPU. Kept as fallback (MaxKernel=24.99.99) |
-| SMCRadeonGPU | 0.3.3 | GPU temp/fan monitoring — disabled, may conflict with NootRX |
+| SMCRadeonGPU | 0.3.3 | GPU temp/fan monitoring — disabled (optional, not currently used) |
 
 ### Not loaded (on disk only)
 
@@ -95,7 +94,7 @@ OC/
 
 - **Kext versions tracked** in config.plist Comment fields (e.g., `<string>V1.7.1</string>`) — update these when upgrading kexts
 - **CPUID spoofing active**: Cpuid1Data/Mask emulates older CPU for macOS compatibility (MinKernel 20.0.0 = Big Sur+)
-- **Boot args**: `-v debug=0x100 keepsyms=1` (verbose/debug), `-ctrsmt` (CpuTopologyRebuild SMT), `revpatch=sbvmm` (RestrictEvents VM bypass)
+- **Boot args**: `debug=0x100 keepsyms=1 agdpmod=pikera` — `agdpmod=pikera` swaps board-id for AGDP, **required** for Navi 21 GPUs to prevent black screen at boot completion
 - **Language**: zh-Hans (Simplified Chinese)
 - **Picker**: External mode (OpenCanopy GUI), 1s timeout, show picker enabled
 
@@ -107,8 +106,8 @@ OC/
 - **NEVER** modify PlatformInfo serials without regenerating via GenSMBIOS (iServices will break)
 - **DO NOT** enable USBPortsMap.kext alongside USBToolBox/UTBMap — they conflict
 - **DO NOT** remove SSDT-GPRW without also removing the GPRW→XPRW ACPI patch in config.plist
-- **DO NOT** enable NootRX and WhateverGreen simultaneously — they conflict on Navi GPU patching
-- **DO NOT** enable SMCRadeonGPU without verifying NootRX compatibility first
+- **DO NOT** enable NootRX alongside WhateverGreen — they conflict on Navi GPU patching
+- **DO NOT** enable SMCRadeonGPU without verifying WhateverGreen compatibility on Navi 21
 - Backup config.plist before ANY change (oldConfig.plist exists for this reason)
 
 ## UNIQUE DETAILS

@@ -14,7 +14,7 @@ OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIF
 ## What Works
 
 - macOS Sequoia (15.x) and Tahoe (26.x)
-- GPU acceleration (NootRX)
+- GPU acceleration (WhateverGreen)
 - USB mapping (USBToolBox + UTBMap)
 - CPU power management (CPUFriend + CpuTopologyRebuild for P/E-cores)
 - Sleep/Wake (GPRW patch)
@@ -43,7 +43,7 @@ OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIF
 |------|---------|------|
 | Lilu | 1.7.2 | Patching framework (must load first) |
 | VirtualSMC | 1.3.8 | SMC emulation |
-| NootRX | 1.0.0 | AMD Navi 21 GPU driver (RX 6950 XT) |
+| WhateverGreen | 1.7.1 (dev) | AMD GPU driver (RX 6950 XT, Navi 21) — requires `agdpmod=pikera` |
 | SMCProcessor | 1.3.8 | CPU sensor data |
 | SMCSuperIO | 1.3.8 | Fan/voltage sensor data |
 | CPUFriend | 1.3.1 | CPU frequency/power management |
@@ -74,11 +74,11 @@ OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIF
 
 - `oldConfig.plist` is a backup config kept for rollback.
 - `UTBMap.kext` contains alternate port maps (`0Info.plist`, `1Info.plist`, `allInfo.plist`) — swap with `Info.plist` to test different USB configurations.
-- WhateverGreen is disabled in favor of NootRX. Do not enable both simultaneously.
-- Boot args: `-v debug=0x100 keepsyms=1 -ctrsmt revpatch=sbvmm`
+- WhateverGreen is the active GPU driver. `agdpmod=pikera` boot-arg is **required** for Navi 21 (without it: black screen at boot completion). NootRX is an alternative driver — do not enable both simultaneously if you switch.
+- Boot args: `debug=0x100 keepsyms=1 agdpmod=pikera`
 
 ## Credits
 
-- [Acidanthera](https://github.com/acidanthera) — OpenCore, Lilu, VirtualSMC, NootRX, and more
+- [Acidanthera](https://github.com/acidanthera) — OpenCore, Lilu, VirtualSMC, WhateverGreen, and more
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) — OpenCore Install Guide
 - [USBToolBox](https://github.com/USBToolBox) — USB mapping
