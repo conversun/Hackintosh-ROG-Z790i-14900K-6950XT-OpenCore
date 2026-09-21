@@ -1,6 +1,6 @@
 # Hackintosh EFI — ROG STRIX Z790-I + i9-14900K + RX 6950 XT
 
-OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIFI.
+OpenCore 1.0.7 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIFI.
 
 ## Hardware
 
@@ -15,12 +15,14 @@ OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIF
 
 - macOS Sequoia (15.x) and Tahoe (26.x)
 - GPU acceleration (WhateverGreen)
-- USB mapping (USBToolBox + UTBMap)
+- USB mapping (USBToolBox + UTBMap, 23 ports — requires `XhciPortLimit=true`)
 - CPU power management (CPUFriend + CpuTopologyRebuild for P/E-cores)
 - Sleep/Wake (GPRW patch)
 - Thunderbolt 3 hotplug
 - NVMe drives
 - OpenCanopy GUI boot picker
+
+**Not enabled:** Bluetooth. The Intel AX211 BT stack (IntelBluetoothFirmware + IntelBTPatcher + BlueToolFixup) is on disk but disabled, and Bluetooth is turned off in BIOS. See Notes.
 
 ## ACPI
 
@@ -73,9 +75,11 @@ OpenCore 1.0.6 EFI for macOS Sequoia / Tahoe on ASUS ROG STRIX Z790-I GAMING WIF
 ## Notes
 
 - `oldConfig.plist` is a backup config kept for rollback.
-- `UTBMap.kext` contains alternate port maps (`0Info.plist`, `1Info.plist`, `allInfo.plist`) — swap with `Info.plist` to test different USB configurations.
+- `UTBMap.kext` contains alternate port maps (`0Info.plist`, `1Info.plist`, `allInfo.plist`) — swap with `Info.plist` to test different USB configurations. The active map has `HS16` removed: port 16 yields locationID `0x14000000`, which collides with the XHCI root hub (locationID encodes the port in only 4 bits).
 - WhateverGreen is the active GPU driver. `agdpmod=pikera` boot-arg is **required** for Navi 21 (without it: black screen at boot completion). NootRX is an alternative driver — do not enable both simultaneously if you switch.
-- Boot args: `debug=0x100 keepsyms=1 agdpmod=pikera`
+- Boot args: `keepsyms=1 agdpmod=pikera`
+- `XhciPortLimit` is **true** and must stay true — the port map exceeds 15 ports. OpenCore 1.0.7 carries a Tahoe-specific (Darwin 25.0+) patch for this quirk; the widely-repeated "XhciPortLimit is broken since macOS 11.3" advice predates OpenCorePkg PR #471 and PR #590.
+- Bluetooth is disabled in BIOS and all three BT kexts are `Enabled=false`. Do **not** try to silence the idle `bluetoothd` / `BlueTool` processes with `launchctl disable` — `bluetoothd` owns the `com.apple.BTAudioHALPlugin.xpc` and `com.apple.server.bluetooth.general.xpc` Mach services, and removing them puts coreaudiod and ContextStoreAgent into a no-backoff lookup loop that pins several cores and leaks gigabytes per hour.
 
 ## Credits
 

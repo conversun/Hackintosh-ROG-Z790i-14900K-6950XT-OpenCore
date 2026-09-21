@@ -427,21 +427,6 @@
 						<key>usb-connector-type</key>
 						<integer>0</integer>
 					</dict>
-					<key>HS16</key>
-					<dict>
-						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>port</key>
-						<data>
-						EAAAAA==
-						</data>
-						<key>port-number</key>
-						<data>
-						EAAAAA==
-						</data>
-						<key>usb-connector-type</key>
-						<integer>0</integer>
-					</dict>
 					<key>SS01</key>
 					<dict>
 						<key>UsbConnector</key>

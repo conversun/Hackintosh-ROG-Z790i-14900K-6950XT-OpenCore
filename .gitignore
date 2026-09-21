@@ -5,3 +5,11 @@ Microsoft
 /OC/Tools
 .sisyphus
 OC/oldConfig.plist
+
+# Local rollback snapshots (see AGENTS.md: back up before any change)
+/OC/config.plist.bak-*
+/OC/Kexts/**/*.bak-*
+/kext-backup-*
+
+# Agent scratch
+.omo/
