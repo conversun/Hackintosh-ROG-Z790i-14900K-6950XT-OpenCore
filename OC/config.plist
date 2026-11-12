@@ -229,7 +229,7 @@
                     <key>BundlePath</key>
                     <string>VirtualSMC.kext</string>
                     <key>Comment</key>
-                    <string>V1.3.8</string>
+                    <string>V1.3.9</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -247,7 +247,7 @@
                     <key>BundlePath</key>
                     <string>WhateverGreen.kext</string>
                     <key>Comment</key>
-                    <string>V1.7.1</string>
+                    <string>V1.7.2</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -265,7 +265,7 @@
                     <key>BundlePath</key>
                     <string>SMCProcessor.kext</string>
                     <key>Comment</key>
-                    <string>V1.3.8</string>
+                    <string>V1.3.9</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -283,7 +283,7 @@
                     <key>BundlePath</key>
                     <string>SMCSuperIO.kext</string>
                     <key>Comment</key>
-                    <string>V1.3.8</string>
+                    <string>V1.3.9</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -425,17 +425,17 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>IntelBluetoothFirmware.kext</string>
+                    <string>DisplayBrightness.kext</string>
                     <key>Comment</key>
-                    <string>V2.5.1</string>
+                    <string>V0.0.42</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/IntelBluetoothFirmware</string>
+                    <string>Contents/MacOS/DisplayBrightness</string>
                     <key>MaxKernel</key>
-                    <string></string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
-                    <string></string>
+                    <string>25.0.0</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -443,13 +443,13 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>IntelBTPatcher.kext</string>
+                    <string>IntelBluetoothFirmware.kext</string>
                     <key>Comment</key>
                     <string>V2.5.1</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/IntelBTPatcher</string>
+                    <string>Contents/MacOS/IntelBluetoothFirmware</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -472,6 +472,60 @@
                     <string></string>
                     <key>MinKernel</key>
                     <string>21.0.0</string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>IntelBTPatcher.kext</string>
+                    <key>Comment</key>
+                    <string>V2.5.1</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/IntelBTPatcher</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>BTLEAdvFixup.kext</string>
+                    <key>Comment</key>
+                    <string>V0.8.3</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/BTLEAdvFixup</string>
+                    <key>MaxKernel</key>
+                    <string>25.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>ForbiddenItlwm.kext</string>
+                    <key>Comment</key>
+                    <string>V0.4.1</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/ForbiddenItlwm</string>
+                    <key>MaxKernel</key>
+                    <string>25.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -738,7 +792,7 @@
                     <key>bluetoothInternalControllerInfo</key>
                     <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>boot-args</key>
-                    <string>keepsyms=1 agdpmod=pikera</string>
+                    <string>keepsyms=1 agdpmod=pikera -btleadv -itlawdlcoexprobe -itlawdliface -itlawdlnativeup -itlawdlcoexrx -itlawdlcoextx -itlawdlcoexmulti -itlawdlcoexdata -itlawdlmitx -itlawdlelicit -itlawdlcaps -itlawdlsvcmerge -itlawdlawsync itlawdlintcoal=4 -itlawdlcoexbatx -itlawdlcoexpeerpause -itlawdlcoexbatrace itlawdltxqueue=4096</string>
                     <key>csr-active-config</key>
                     <data>AwoAAA==</data>
                     <key>prev-lang:kbd</key>
@@ -891,6 +945,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -903,6 +959,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -915,6 +973,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -927,6 +987,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -939,6 +1001,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
